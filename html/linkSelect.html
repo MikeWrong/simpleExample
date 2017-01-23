@@ -1,0 +1,48 @@
+<!-- 两个 select 联动的一种实现方式 http://blog.csdn.net/sunyujia/article/details/2040748-->
+<html>
+	<head>
+	<script type="text/javascript">
+	function $(id){
+		return document.getElementById(id);
+	}
+	function test(){
+		var eChild=$('child_'+$("parent").value).cloneNode(true);
+		eChild.id="child";
+		eChild.name="child";
+		eChild.style.display="";
+		eChild.value="c2"
+		$("cspan").innerHTML="";
+		$("cspan").appendChild(eChild);
+	}
+	function init(){
+		test()
+	}
+	</script>
+	</head>
+	<body onload="init();">
+		<form method="post">
+		<select id="parent" onchange="test();">
+			<option value="1">a</option>
+			<option value="2">b</option>
+			<option value="3">c</option>
+		</select>
+		<span id="cspan"></span>
+		<select id="child_1" style="display: none;">
+			<option value="c1">ca_a</option>
+			<option value="c2">cb_a</option>
+			<option value="c3">cc_a</option>
+		</select>
+		<select id="child_2" style="display: none;">
+			<option value="c1">ca_b</option>
+			<option value="c2">cb_b</option>
+			<option value="c3">cc_b</option>
+		</select>
+		<select id="child_3" style="display: none;">
+			<option value="c1">ca_c</option>
+			<option value="c2">cb_c</option>
+			<option value="c3">cc_c</option>
+		</select>
+		<input type="submit"/>
+		</form>
+	</body>
+</html>
