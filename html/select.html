@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<select id="selectTest" onchange="changeFunction()">
+		<option value ="volvo">Volvo</option>
+		<option value ="saab">Saab</option>
+		<option value="opel">Opel</option>
+		<option value="audi">Audi</option>
+		</select>
+		<select id="selectTest">
+		<option value ="volvo">Volvo</option>
+		<option value ="saab">Saab</option>
+		<option value="opel">Opel</option>
+		<option value="audi">Audi</option>
+		</select>
+		
+		<br>
+		<input type="button" value="add option" onclick="addOptionToSelect()">
+		<br>
+		<select id="slt">
+		<option value='1'>aaaa</option>
+		<option value='2'>bbbb</option>
+		<option value='3'>cccc</option>
+		<option value='4'>dddd</option>
+		<option value='5'>eeee</option>
+		</select>
+		<br>
+		<input type="button" value="get value" onclick="getvalue()">
+		
+	</body>
+</html>
+<script>
+	function changeFunction() {
+		var select = document.getElementById("selectTest");
+		select.selectedIndex = 3;
+	}
+	
+//	动态添加option
+	function addOptionToSelect()
+	{
+		var slt=document.getElementById("slt");
+		var objOption=document.createElement("OPTION");
+		objOption.value='6';
+		objOption.text='content';
+		slt.add(objOption);
+		alert(slt.options.length);
+		slt.options[slt.options.length-1].selected='selected';
+	}
+	function getvalue()
+	{
+		var slt=document.getElementById("slt");
+		alert(slt.value);
+	}
+</script>
