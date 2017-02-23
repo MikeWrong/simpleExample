@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script>
+function testAsync(){
+    $.ajax({
+        async: true,
+        type : "GET",
+        url : 'test.html',
+        complete: function(msg){
+            alert('complete');
+        },
+        success : function(data) {
+            alert('success');
+            temp=data;
+        }
+    });
+    alert('end');
+}
+</script>
+<title>哈哈哈</title>
+<style type="text/css" media="screen">
+/*	input {
+		margin: 0 0 0 100px;
+		width: 50px;
+	}*/
+	.search-query {
+		width: 10px;
+	}
+
+</style>
+</head>
+
+<body>
+<a href="javascript:void(0)" onclick="testAsync()">测试异步ajax</a>
+<a href="my.php">我是一个php文件</a>
+</br>
+</body>
+
+</html>
