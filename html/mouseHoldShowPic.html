@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+ <head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" /> 
+    <title>鼠标悬停文字上显示图片</title> 
+    <script language="javascript"> 
+        function showPic(e,sUrl){
+                var x,y;
+                x = e.clientX;
+                y = e.clientY;
+                document.getElementById("Layer1").style.left = x+2+'px';
+                document.getElementById("Layer1").style.top = y+2+'px';
+                document.getElementById("Layer1").innerHTML = "<img border='0' src=\"" + sUrl + "\">";
+                document.getElementById("Layer1").style.display = "";
+        }
+
+        function hiddenPic(){
+                document.getElementById("Layer1").innerHTML = "";
+                document.getElementById("Layer1").style.display = "none";
+        }
+        </script> 
+ </head> 
+ <body> 
+    <div id="Layer1" style="display: none; position: absolute; z-index: 100;"> 
+    </div> 
+    <p> <a href="" onmouseout="hiddenPic();" onmousemove="showPic(event,'http://avatar.profile.csdn.net/D/8/D/2_dean8828.jpg');"> 当鼠标指到标题时,鼠标显示对应图片</a> </p>  
+ </body>
+</html>
