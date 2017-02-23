@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <title>www.jb51.net 脚本之家 鼠标滑过缩略图时放大图片</title> 
+  <style type="text/css"> 
+<!-- 
+/** {margin:0;padding:0;} */
+body {font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px;} 
+img {border:0} 
+/*p {font-size:14px;} */
+div {float:left; width:50px; height:40px; display:block; overflow:visible;*overflow:hidden; margin:0px 5px; border:3px #333 solid;position:relative;*position:static;} 
+img {position:absolute;left:0px;top:0px;clip:rect(0px 50px 40px 0px);z-index: 0;*position:static;} 
+img:hover {position:relative; left:-3px; top:-3px; border:3px #f00 solid; z-index:2; clip:rect(0px 137px 137px 0px);} 
+--> 
+a:hover {
+  background:url('http://img4.pcpop.com/WallImages/0x0/0/190/000190571.jpg');
+}
+
+</style> 
+ </head> 
+ <body> 
+  <p>本例旨在展示鼠标滑到缩略图上时，放大图片。</p> 
+  <!--[if IE 6]><a href="#"><![endif]--> 
+  <div>
+   <img src="http://files.jb51.net/upload/20080203224505387.jpg" />
+  </div> 
+  <div>
+   <img src="http://img4.pcpop.com/WallImages/0x0/0/190/000190571.jpg" />
+  </div> 
+  <div>
+   <img src="http://files.jb51.net/upload/20080203224554417.jpg" />
+  </div> 
+  <!--[if IE 6]></a><![endif]-->   
+ </body>
+</html>
